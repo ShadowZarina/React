@@ -1,33 +1,79 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import './App.css';
+/*
+import mySong from './Coding/React/first-project/Lukrembo.mp3';
+*/
 
-function App() {
+export default function App() {
+  /*
+  function AudioPlayer({ src }) {
+  const audioRef = useRef(null);
+  
+  
+  const playAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+  };
+
+  const pauseAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
+  */
+  };
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    const myInput = document.getElementById('task-input');
+    const addTaskButton = document.getElementsByClassName('add-button');
+
+    addTaskButton.addEventListener('click', function() {
+
+      const addTask = () => {
+        var newList = document.createElement('li');
+        var task = document.createElement('span');
+        var deleteTaskButton = document.createElement('button');
+        var inputValue = myInput.value;
+
+        newList.classList.add('task-item');
+        task.textContent = inputValue;
+        deleteButton.textContent = "X";
+        deleteButton.classList.add('delete-button');
+        deleteButton.onclick = deleteTask;
+
+        newList.appendChild(task);
+        newList.appendChild(deleteButton);
+      };
+    });
+
+    deleteTaskButton.addEventListener('click', function() {
+
+      const deleteTask = () => {
+        var taskToRemove = event.target.parentNode; 
+        taskToRemove.remove();
+        task.remove();
+        deleteButton.remove();
+      };
+  });
+  
 
   return (
     <div className="container">
       <h1>To-Do List</h1>
 
       <div className="input-group">
-        <input type="text" placeholder="Enter a task" />
-        <button className="add-button" type="submit">Add</button>
+        <input id="task-input" type="text" placeholder="Enter a task" />
+        <button className="add-button" type="submit" onClick={addTask}>Add</button>
       </div>
 
       <ul>
         <li className="task-item">
           <span>Wash the dishes</span>
-          <button className="delete-button">X</button>
+          <button className="delete-button" onClick={() => deleteTask(index)}>X</button>
       </li>
       </ul>
     </div>
-    /*
-    const MusicPlayer = () => {
-      <div>
-        <audio controls src="" />
-        <p>Now playing: Your Awesome Song</p>
-      </div>
-      */
-    };
-  )
-}
 
-export default App;
+    );
+  });
+}
