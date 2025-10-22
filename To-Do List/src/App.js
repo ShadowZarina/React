@@ -1,26 +1,13 @@
 import React, { useState, useRef } from 'react';
 import './App.css';
-/*
-import mySong from './Coding/React/first-project/Lukrembo.mp3';
-*/
+import BackgroundChanger from "./BackgroundChanger.js"
+import ColorChanger from "./ColorChanger.js"
+import MusicPlayer from "./MusicPlayer.js"
+import ToDoList from "./ToDoList.js"
+
 
 export default function App() {
-  /*
-  function AudioPlayer({ src }) {
-  const audioRef = useRef(null);
-  
-  
-  const playAudio = () => {
-    if (audioRef.current) {
-      audioRef.current.play();
-    }
-  };
 
-  const pauseAudio = () => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-    }
-  */
   };
   
   document.addEventListener('DOMContentLoaded', function() {
